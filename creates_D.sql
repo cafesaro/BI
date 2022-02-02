@@ -25,95 +25,102 @@ create table if not exists SEGURO_DW_27985940.DIM_CONTRATO (
     DESCRIP_CONTRATO                    VARCHAR(25)     ,
 );
 
-create table if not exists SEGURO_DW_27985940.lnk_cprm_request_base (
-    id_request                          bigserial       primary key,
-    id_origin_country                   int             not null,
-    id_destiny_country                  int             not null,
-    cprm_req_status_ppl                 varchar(20)     not null,
-    cprm_req_status_sec                 varchar(20)     not null,
-    cprm_req_status_detour              varchar(20),
-    cprm_req_status_vf_bco_org          boolean         not null default false,
-    cprm_req_ok_trf_dest                boolean         not null default false,
-    cprm_req_ok_notif_cust              boolean         not null default false,
-    cprm_req_in_claim                   boolean         not null default false
+create table if not exists SEGURO_DW_27985940.DIM_SINIESTRO (
+    SK_DIM_SINIESTRO                    int             primary key,
+    NRO_SINIESTRO                       int             ,
+    DESCRIP_SINIESTRO                   VARCHAR(25)     ,
 );
 
-create table if not exists SEGURO_DW_27985940.lnk_req_actions_grp_emp (
-    id_action_emp                       bigserial       primary key,
-    to_action                           varchar(30)     not null,
-    id_emp                              bigint          not null
-        references SEGURO_DW_27985940.ms_emp_sixmap_request (id_emp),
-    usual_action                        boolean         not null,
-    bk_action                           boolean         not null,
-    is_cordinator                       boolean         not null,
-    allow_venezuela                     boolean         not null,
-    allow_panama                        boolean         not null,
-    allow_colombia                      boolean         not null,
-    allow_peru                          boolean         not null,
-    allow_chile                         boolean         not null,
-    allow_argentina                     boolean         not null,
-    allow_brasil                        boolean         not null,
-    allow_repdominicana                 boolean         not null,
-    allow_mexico                        boolean         not null,
-    allow_espana                        boolean         not null
+create table if not exists SEGURO_DW_27985940.DIM_ESTADO_CONTRATO (
+    SK_DIM_ESTADO_CONTRATO              int             primary key,
+    NRO_ESTADO                          int             ,
+    DESCRIP_ESTADO                      VARCHAR(25)     ,
 );
 
-create table if not exists SEGURO_DW_27985940.ms_req_workflow_asig_actions (
-    id_asig                             bigserial       primary key,
-    id_origin_country                   int             not null,
-    serv_type                           varchar(20)     not null,
-    entity                              varchar(20)     not null
-        check ( entity = 'CONSULTA' or entity = 'REMESA' ),
-    grp_step                            varchar(10)     not null,
-    cons_status                         varchar(10),
-    cons_anexo                          boolean,
-    cprm_req_status_ppl                 varchar(30)     not null,
-    cprm_req_status_sec                 varchar(30)     not null,
-    cprm_req_status_detour              varchar(30)     not null,
-    cprm_req_status_vf_bco_org          boolean,
-    cprm_req_ok_trf_dest                boolean,
-    cprm_req_ok_notif_cust              boolean,
-    cprm_req_in_claim                   boolean,
-    to_action                           varchar(30)     not null,
-    to_grp_cord                         boolean         not null,
-    asig_type                           varchar(20)     not null
+create table if not exists SEGURO_DW_27985940.DIM_EVALUACION_SERVICIO (
+    SK_DIM_EVALUACION_SERVICIO          int             primary key,
+    COD_EVALUACION_SERVICIO             int             ,
+    NB_DESCRIP                          VARCHAR(25)     ,
 );
 
-create table if not exists SEGURO_DW_27985940.log_asig_actions_emp (
-    id_log_asig                         bigserial       primary key,
-    asig_date                           timestamptz     not null default now(),
-    serv_type                           varchar(15)     not null,
-    origin_country                      varchar(15)     not null,
-    destiny_country                     varchar(15)     not null,
-    id_consult                          bigint,
-    id_cprm_req                         bigint,
-    pub_id_req                          varchar(15),
-    entity                              varchar(8)      not null,
-    username                            varchar(30)     not null,
-    name                                varchar(30)     not null,
-    lastname                            varchar(30)     not null,
-    user_type                           varchar(15)     not null,
-    to_action                           varchar(30)     not null,
-    grp_step                            varchar(15)     not null,
-    cprm_req_status_ppl                 varchar(30)     not null,
-    cprm_req_status_sec                 varchar(30)     not null,
-    cprm_req_status_vf_bco_org          boolean,
-    cprm_req_ok_trf_dest                boolean,
-    cprm_req_ok_notif_cust              boolean,
-    cprm_req_in_claim                   boolean,
-    is_cordinator                       boolean         not null,
-    method_asig                         varchar(15)     not null,
-    action_finish                       boolean         not null default false,
-    action_finish_date                  timestamptz,
-    current_active                      boolean         not null default true
+create table if not exists SEGURO_DW_27985940.DIM_CLIENTE (
+    SK_DIM_CLIENTE                      int             primary key,
+    COD_CLIENTE                         int             ,
+    NB_CLIENTE                          VARCHAR(25)     ,
+    CI_RIF                              VARCHAR(45)     ,
+    TELEFONO                            VARCHAR(45)     ,
+    SEXO                                VARCHAR(45)     ,
+    EMAIL                               VARCHAR(45)     ,
 );
 
-create table if not exists SEGURO_DW_27985940.ms_actions_durations_kpi (
-    id_action_kpi                       serial          not null,
-    id_origin_country                   int             not null,
-    id_dest_country                     int             not null,
-    id_action                           varchar(30)     not null,
-    duration_a                          int             not null,
-    duration_b                          int             not null,
-    active                              boolean         not null
+create table if not exists SEGURO_DW_27985940.DIM_PRODUCTO (
+    SK_DIM_PRODUCTO                     int             primary key,
+    COD_PRODUCTO                        int             ,
+    NB_PRODUCTO                         VARCHAR(25)     ,
+    DESCRIP_PRODUCTO                    VARCHAR(25)     ,
+    COD_TIPO_PRODUCTO                   VARCHAR(25)     ,
+    NB_TIPO_PRODUCTO                    VARCHAR(25)     ,
+    CALIFICACION                        VARCHAR(25)     ,
+);
+
+create table if not exists SEGURO_DW_27985940.FACT_EVALUACION_SERVICIO (
+    SK_DIM_TIEMPO_RECOMENDACION             int             NOT NULL,
+    constraint Fk_TIEMPO_RECOMENDACION FOREIGN KEY (SK_DIM_TIEMPO_RECOMENDACION) REFERENCES SEGURO_DW_27985940.DIM_TIEMPO (SK_DIM_TIEMPO) ON DELETE CASCADE
+    SK_DIM_CLIENTE             int             NOT NULL,
+    constraint Fk_CLIENTE FOREIGN KEY (SK_DIM_CLIENTE) REFERENCES SEGURO_DW_27985940.DIM_CLIENTE (SK_DIM_CLIENTE) ON DELETE CASCADE
+    SK_DIM_PRODUCTO                     int             NOT NULL,
+    constraint Fk_PRODUCTO FOREIGN KEY (SK_DIM_PRODUCTO) REFERENCES SEGURO_DW_27985940.DIM_PRODUCTO (SK_DIM_PRODUCTO) ON DELETE CASCADE
+    SK_DIM_EVALUACION_SERVICIO                   int             NOT NULL,
+    constraint Fk_EVALUACION_SERVICIO FOREIGN KEY (SK_DIM_EVALUACION_SERVICIO) REFERENCES SEGURO_DW_27985940.DIM_EVALUACION_SERVICIO (SK_DIM_EVALUACION_SERVICIO) ON DELETE CASCADE
+    CANTIDAD                            INT             ,
+    RECOMIENDA_AMIGO                    REAL            , 
+);
+
+create table if not exists SEGURO_DW_27985940.FACT_REGISTRO_SINIESTRO (
+    SK_DIM_TIEMPO_RESPUESTA             int             NOT NULL,
+    constraint Fk_RESPUESTA FOREIGN KEY (SK_DIM_TIEMPO_RESPUESTA) REFERENCES SEGURO_DW_27985940.DIM_TIEMPO (SK_DIM_TIEMPO) ON DELETE CASCADE
+    SK_DIM_TIEMPO_SINIESTRO             int             NOT NULL,
+    constraint Fk_TIEMPO_SINIESTRO FOREIGN KEY (SK_DIM_TIEMPO_SINIESTRO) REFERENCES SEGURO_DW_27985940.DIM_TIEMPO (SK_DIM_TIEMPO) ON DELETE CASCADE
+    SK_DIM_CONTRATO                     int             NOT NULL,
+    constraint Fk_CONTRATO FOREIGN KEY (SK_DIM_CONTRATO) REFERENCES SEGURO_DW_27985940.DIM_CONTRATO (SK_DIM_CONTRATO) ON DELETE CASCADE
+    SK_DIM_SINIESTRO                    int             NOT NULL,
+    constraint Fk_SINIESTRO FOREIGN KEY (SK_DIM_SINIESTRO) REFERENCES SEGURO_DW_27985940.DIM_CONTRATO (SK_DIM_SINIESTRO) ON DELETE CASCADE
+    MONTO_RECONOCIDO                    REAL            ,
+    CANTIDAD                            INT             ,
+    MONTO_SOLICITADO                    REAL            , 
+    ID_RECHAZO                          VARCHAR(2)      CHECK (status = 'SI' or status = 'NO'),,
+);
+
+create table if not exists SEGURO_DW_27985940.FACT_REGISTRO_CONTRATO (
+    SK_DIM_TIEMPO_INICIO                int             NOT NULL,
+    constraint Fk_TIEMPO_INICIO  FOREIGN KEY (SK_DIM_TIEMPO_INICIO) REFERENCES SEGURO_DW_27985940.DIM_TIEMPO (SK_DIM_TIEMPO) ON DELETE CASCADE
+    SK_DIM_TIEMPO_FIN            int             NOT NULL,
+    constraint Fk_TIEMPO_FIN FOREIGN KEY (SK_DIM_TIEMPO_FIN) REFERENCES SEGURO_DW_27985940.DIM_TIEMPO (SK_DIM_TIEMPO) ON DELETE CASCADE
+    SK_DIM_CLIENTE             int             NOT NULL,
+    constraint Fk_CLIENTE FOREIGN KEY (SK_DIM_CLIENTE) REFERENCES SEGURO_DW_27985940.DIM_CLIENTE (SK_DIM_CLIENTE) ON DELETE CASCADE
+    SK_DIM_PRODUCTO                     int             NOT NULL,
+    constraint Fk_PRODUCTO FOREIGN KEY (SK_DIM_PRODUCTO) REFERENCES SEGURO_DW_27985940.DIM_PRODUCTO (SK_DIM_PRODUCTO) ON DELETE CASCADE
+    SK_DIM_CONTRATO                     int             NOT NULL,
+    constraint Fk_CONTRATO FOREIGN KEY (SK_DIM_CONTRATO) REFERENCES SEGURO_DW_27985940.DIM_CONTRATO (SK_DIM_CONTRATO) ON DELETE CASCADE
+    SK_DIM_ESTADO_CONTRATO              Int             NOT NULL,
+    constraint Fk_ESTADO_CONTRATO FOREIGN KEY (SK_DIM_ESTADO_CONTRATO) REFERENCES SEGURO_DW_27985940.DIM_ESTADO_CONTRATO (SK_DIM_ESTADO_CONTRATO) ON DELETE CASCADE
+    MONTO                               INT            ,
+    CANTIDAD                            INT             ,
+    CANTIDAD_CLIENTE                    INT             ,
+    CANTIDAD_PRODUCTO                   INT             ,
+    CANTIDAD_CONTRATO                   INT             ,
+);
+
+create table if not exists SEGURO_DW_27985940.FACT_REGISTRO_CONTRATO (
+    SK_DIM_TIEMPO_META                  int             NOT NULL,
+    constraint Fk_TIEMPO_META  FOREIGN KEY (SK_DIM_TIEMPO_META) REFERENCES SEGURO_DW_27985940.DIM_TIEMPO (SK_DIM_TIEMPO) ON DELETE CASCADE
+    SK_DIM_CLIENTE                      int             NOT NULL,
+    constraint Fk_CLIENTE FOREIGN KEY (SK_DIM_CLIENTE) REFERENCES SEGURO_DW_27985940.DIM_CLIENTE (SK_DIM_CLIENTE) ON DELETE CASCADE
+    SK_DIM_PRODUCTO                     int             NOT NULL,
+    constraint Fk_PRODUCTO FOREIGN KEY (SK_DIM_PRODUCTO) REFERENCES SEGURO_DW_27985940.DIM_PRODUCTO (SK_DIM_PRODUCTO) ON DELETE CASCADE
+    SK_DIM_CONTRATO                     int             NOT NULL,
+    constraint Fk_CONTRATO FOREIGN KEY (SK_DIM_CONTRATO) REFERENCES SEGURO_DW_27985940.DIM_CONTRATO (SK_DIM_CONTRATO) ON DELETE CASCADE
+    MONTO_META_VENTA                    REAL            ,
+    META_RENOVACION                     INT             ,
+    META_ASEGURADOS                     INT             ,
 );
