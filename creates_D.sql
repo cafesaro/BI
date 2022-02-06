@@ -3,7 +3,7 @@ create schema if not exists SEGURO_DW_27985940;
 set TIMEZONE = 'America/Caracas';
 
 create table if not exists SEGURO_DW_27985940.DIM_TIEMPO (
-    SK_DIM_TIEMPO                       int             primary key,
+    SK_DIM_TIEMPO                       serial             primary key,
     COD_ANNIO                           int             ,
     COD_MES                             int             ,
     COD_DIA_ANNIO                       int             ,
@@ -20,31 +20,31 @@ create table if not exists SEGURO_DW_27985940.DIM_TIEMPO (
 );
 
 create table if not exists SEGURO_DW_27985940.DIM_CONTRATO (
-    SK_DIM_CONTRATO                     int             primary key,
+    SK_DIM_CONTRATO                     serial             primary key,
     NRO_CONTRATO                        int             ,
     DESCRIP_CONTRATO                    VARCHAR(25)     
 );
 
 create table if not exists SEGURO_DW_27985940.DIM_SINIESTRO (
-    SK_DIM_SINIESTRO                    int             primary key,
+    SK_DIM_SINIESTRO                    serial             primary key,
     NRO_SINIESTRO                       int             ,
     DESCRIP_SINIESTRO                   VARCHAR(25)     
 );
 
 create table if not exists SEGURO_DW_27985940.DIM_ESTADO_CONTRATO (
-    SK_DIM_ESTADO_CONTRATO              int             primary key,
+    SK_DIM_ESTADO_CONTRATO              serial             primary key,
     NRO_ESTADO                          int             ,
     DESCRIP_ESTADO                      VARCHAR(25)     
 );
 
 create table if not exists SEGURO_DW_27985940.DIM_EVALUACION_SERVICIO (
-    SK_DIM_EVALUACION_SERVICIO          int             primary key,
+    SK_DIM_EVALUACION_SERVICIO          serial             primary key,
     COD_EVALUACION_SERVICIO             int             ,
     NB_DESCRIP                          VARCHAR(25)     
 );
 
 create table if not exists SEGURO_DW_27985940.DIM_CLIENTE (
-    SK_DIM_CLIENTE                      int             primary key,
+    SK_DIM_CLIENTE                      serial             primary key,
     COD_CLIENTE                         int             ,
     NB_CLIENTE                          VARCHAR(25)     ,
     CI_RIF                              VARCHAR(45)     ,
@@ -54,7 +54,7 @@ create table if not exists SEGURO_DW_27985940.DIM_CLIENTE (
 );
 
 create table if not exists SEGURO_DW_27985940.DIM_PRODUCTO (
-    SK_DIM_PRODUCTO                     int             primary key,
+    SK_DIM_PRODUCTO                     serial             primary key,
     COD_PRODUCTO                        int             ,
     NB_PRODUCTO                         VARCHAR(25)     ,
     DESCRIP_PRODUCTO                    VARCHAR(25)     ,
