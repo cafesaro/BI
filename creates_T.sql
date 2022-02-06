@@ -31,6 +31,7 @@ create table if not exists SEGURO_G27625529.PRODUCTO (
     NB_PRODUCTO                         VARCHAR(25)     not null,
     DESCRIPCION                         VARCHAR(25)     not null,
     COD_TIPO_PRODUCTO                   int             not null,
+    CALIFICACION                        VARCHAR(25)     not null,
     constraint TIPO_PRODUCTO FOREIGN KEY (COD_TIPO_PRODUCTO) REFERENCES SEGURO_G27625529.TIPO_PRODUCTO (COD_TIPO_PRODUCTO) ON DELETE CASCADE
 );
 

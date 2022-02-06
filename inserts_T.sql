@@ -44,11 +44,11 @@ INSERT INTO SEGURO_G27625529.TIPO_PRODUCTO(COD_TIPO_PRODUCTO,NB_TIPO_PRODUCTO) V
 (3,'Daños'),
 (4,'Patrimoniales');
 
-INSERT INTO SEGURO_G27625529.PRODUCTO(COD_PRODUCTO,NB_PRODUCTO, DESCRIPCION, COD_TIPO_PRODUCTO) VALUES
-(1,'Crédito y Caución','Este es el seguro 1',1),
-(2,'Salud','Este es el seguro 2',2),
-(3,'Incendios','Este es el seguro 3',3),
-(4,'Automóvil','Este es el seguro 4',4);
+INSERT INTO SEGURO_G27625529.PRODUCTO(COD_PRODUCTO,NB_PRODUCTO, DESCRIPCION, COD_TIPO_PRODUCTO, CALIFICACION) VALUES
+(1,'Crédito y Caución','Este es el seguro 1',1, 'Malo'),
+(2,'Salud','Este es el seguro 2',2, 'Bueno'),
+(3,'Incendios','Este es el seguro 3',3, 'Escelente'),
+(4,'Automóvil','Este es el seguro 4',4, 'Regular');
 
 INSERT INTO SEGURO_G27625529.CLIENTE(COD_CLIENTE,NB_CLIENTE, CI_RIF, TELEFONO,SEXO,EMAIL,COD_SUCURSAL) VALUES
 (1,'Carlos Sanchez','27985940','1111111','Masculino','cafesaro@gmail.com',1 ),

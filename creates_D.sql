@@ -47,7 +47,7 @@ create table if not exists SEGURO_DW_27985940.DIM_CLIENTE (
     SK_DIM_CLIENTE                      serial             primary key,
     COD_CLIENTE                         int             ,
     NB_CLIENTE                          VARCHAR(25)     ,
-    CI_RIF                              VARCHAR(45)     ,
+    CI_RIF                              int             ,
     TELEFONO                            VARCHAR(45)     ,
     SEXO                                VARCHAR(45)     ,
     EMAIL                               VARCHAR(45)     
@@ -58,7 +58,7 @@ create table if not exists SEGURO_DW_27985940.DIM_PRODUCTO (
     COD_PRODUCTO                        int             ,
     NB_PRODUCTO                         VARCHAR(25)     ,
     DESCRIP_PRODUCTO                    VARCHAR(25)     ,
-    COD_TIPO_PRODUCTO                   VARCHAR(25)     ,
+    COD_TIPO_PRODUCTO                   int             ,
     NB_TIPO_PRODUCTO                    VARCHAR(25)     ,
     CALIFICACION                        VARCHAR(25)     
 );
