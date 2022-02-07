@@ -50,8 +50,23 @@ create table if not exists SEGURO_DW_27985940.DIM_CLIENTE (
     CI_RIF                              int             ,
     TELEFONO                            VARCHAR(45)     ,
     SEXO                                VARCHAR(45)     ,
-    EMAIL                               VARCHAR(45)     
+    EMAIL                               VARCHAR(45)     ,
+    COD_SUCURSAL                        int             ,
+    NB_SUCURSAL                         VARCHAR(25)     ,
+    COD_CIUDAD                          int             ,
+    NB_CIUDAD                           VARCHAR(25)     ,
+    COD_PAIS                            int             ,
+    NB_PAIS                             VARCHAR(25)     
 );
+
+SELECT c.COD_CLIENTE, c.NB_CLIENTE, c.CI_RIF, c.TELEFONO, c.SEXO, c.EMAIL, 
+s.COD_SUCURSAL, s.NB_SUCURSAL,
+ciu.COD_CIUDAD, ciu.NB_CIUDAD,
+p.COD_PAIS, p.NB_PAIS
+FROM SEGURO_G27625529.CLIENTE c
+LEFT JOIN SEGURO_G27625529.SUCURSAL s ON s.COD_SUCURSAL=c.COD_SUCURSAL
+left join SEGURO_G27625529.CIUDAD ciu on ciu.COD_CIUDAD=s.COD_CIUDAD
+left join SEGURO_G27625529.PAIS p ON p.COD_PAIS=ciu.COD_PAIS
 
 create table if not exists SEGURO_DW_27985940.DIM_PRODUCTO (
     SK_DIM_PRODUCTO                     serial             primary key,

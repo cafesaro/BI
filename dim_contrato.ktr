@@ -436,7 +436,7 @@
   <notepads>
   </notepads>
   <connection>
-    <name>postgres</name>
+    <name>postgresC</name>
     <server>localhost</server>
     <type>POSTGRESQL</type>
     <access>Native</access>
@@ -511,7 +511,7 @@
     </partitioning>
     <valuename>SK_DIM_CONTRATO</valuename>
     <use_database>N</use_database>
-    <connection>postgres</connection>
+    <connection>postgresC</connection>
     <schema/>
     <seqname>SEQ_</seqname>
     <use_counter>Y</use_counter>
@@ -544,7 +544,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>postgres</connection>
+    <connection>postgresC</connection>
     <sql>SELECT * FROM SEGURO_G27625529.CONTRATO </sql>
     <limit>0</limit>
     <lookup/>
@@ -562,8 +562,8 @@
         <origin>Entrada Tabla</origin>
         <comments>nro_contrato</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -572,7 +572,7 @@
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
+        <date_format_locale>es_ES</date_format_locale>
         <date_format_timezone>America/Caracas</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
@@ -585,8 +585,8 @@
         <origin>Entrada Tabla</origin>
         <comments>descripcion_contrato</comments>
         <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -595,7 +595,7 @@
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
+        <date_format_locale>es_ES</date_format_locale>
         <date_format_timezone>America/Caracas</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
@@ -625,11 +625,11 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>postgres</connection>
+    <connection>postgresC</connection>
     <commit>100</commit>
     <update_bypassed>Y</update_bypassed>
     <lookup>
-      <schema>SEGURO_DW_27985940</schema>
+      <schema>seguro_dw_27985940</schema>
       <table>dim_contrato</table>
       <key>
         <name>nro_contrato</name>

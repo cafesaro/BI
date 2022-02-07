@@ -10,7 +10,7 @@ INSERT INTO SEGURO_G27625529.CIUDAD(COD_CIUDAD,COD_PAIS,NB_CIUDAD) VALUES
 (1,1,'Caracas'),
 (2,1,'Valencia'),
 (3,1,'Maracaibo'),
-(4,1,'Panama'),
+(4,1,'Socopo'),
 (5,2,'Bogota'),
 (6,2,'Medellin'),
 (7,3,'Cuidad de Mexico'),
@@ -24,19 +24,19 @@ INSERT INTO SEGURO_G27625529.CIUDAD(COD_CIUDAD,COD_PAIS,NB_CIUDAD) VALUES
 
 INSERT INTO SEGURO_G27625529.SUCURSAL(COD_SUCURSAL,COD_CIUDAD,NB_SUCURSAL) VALUES
 (1,1,'Sucursal Caracas'),
-(2,1,'Sucursal Valencia'),
-(3,1,'Sucursal Maracaibo'),
-(4,1,'Sucursal Panama'),
-(5,2,'Sucursal Bogota'),
-(6,2,'Sucursal Medellin'),
-(7,3,'Sucursal Cuidad de Mexico'),
-(8,3,'Sucursal Veracruz'),
-(9,4,'Sucursal New York'),
-(10,4,'Sucursal Miami'),
-(11,5,'Sucursal Madrid'),
-(12,5,'Sucursal Barcelona'),
-(13,6,'Sucursal Sydney'),
-(14,6,'Sucursal Melbourne');
+(2,2,'Sucursal Valencia'),
+(3,3,'Sucursal Maracaibo'),
+(4,4,'Sucursal Socopo'),
+(5,5,'Sucursal Bogota'),
+(6,6,'Sucursal Medellin'),
+(7,7,'Sucursal Cuidad de Mexico'),
+(8,8,'Sucursal Veracruz'),
+(9,9,'Sucursal New York'),
+(10,10,'Sucursal Miami'),
+(11,11,'Sucursal Madrid'),
+(12,12,'Sucursal Barcelona'),
+(13,13,'Sucursal Sydney'),
+(14,14,'Sucursal Melbourne');
 
 INSERT INTO SEGURO_G27625529.TIPO_PRODUCTO(COD_TIPO_PRODUCTO,NB_TIPO_PRODUCTO) VALUES
 (1,'Prestación de Servicios'),
@@ -52,11 +52,17 @@ INSERT INTO SEGURO_G27625529.PRODUCTO(COD_PRODUCTO,NB_PRODUCTO, DESCRIPCION, COD
 
 INSERT INTO SEGURO_G27625529.CLIENTE(COD_CLIENTE,NB_CLIENTE, CI_RIF, TELEFONO,SEXO,EMAIL,COD_SUCURSAL) VALUES
 (1,'Carlos Sanchez','27985940','1111111','Masculino','cafesaro@gmail.com',1 ),
-(2,'Gabriel Tagliafico','27625529','22222','Masculino','gabot@gmail.com',1 ),
-(3,'Sofia Rodirguez','27777777','33333333','Femenino','sofilin@gmail.com',1 ),
-(4,'Juan Hernandez','2666666','44444444','Masculino','juanH@gmail.com',1 ),
-(5,'Cesar Guzman','28888888','55555555','Masculino','viaincorrecta@gmail.com',1 ),
-(6,'Sebastian Gonzalez','25555555','6666666666','Masculino','sebas@gmail.com',1 );
+(2,'Gabriel Tagliafico','27625529','22222','Masculino','gabot@gmail.com',2 ),
+(3,'Sofia Rodirguez','27777777','33333333','Femenino','sofilin@gmail.com',3 ),
+(4,'Juan Hernandez','2666666','44444444','Masculino','juanH@gmail.com',4 ),
+(5,'Cesar Guzman','28888888','55555555','Masculino','viaincorrecta@gmail.com',5 ),
+(6,'Sebastian Gonzalez','25555555','6666666666','Masculino','sebas@gmail.com',6 ),
+(7,'Andrea Parima','24445522','77777777','Femenino','andre@gmail.com',2 ),
+(8,'Maria Pinto','26688554','55555544','Femenino','maripin@gmail.com',14 ),
+(9,'Santiago Sanchez','30222555','8888888','Masculino','santisan@gmail.com',3 ),
+(10,'Manuel Mendez','27555666','9999999','Masculino','Mnumendez66@gmail.com',4 ),
+(11,'Jacob Cortez','26555444','1010101010','Masculino','mesiguenono@gmail.com',9 ),
+(12,'Corina Smith','24333111','11112233','Femenino','corimusic@gmail.com',10 );
 
 INSERT INTO SEGURO_G27625529.EVALUACION_SERVICIO(COD_EVALUACION_SERVICIO,NB_EVALUACION_SERVICIO) VALUES
 (1,'Malo'),
@@ -94,10 +100,10 @@ INSERT INTO SEGURO_G27625529.REGISTRO_CONTRATO(NRO_CONTRATO,COD_PRODUCTO,COD_CLI
 (4,4,4,to_timestamp('26-10-2021 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),to_timestamp('26-10-2022 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),400, 'Vencido'),
 (5,4,5,to_timestamp('26-10-2021 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),to_timestamp('26-10-2022 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),500, 'Vencido'),
 (6,3,6,to_timestamp('26-10-2021 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),to_timestamp('26-10-2022 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),600, 'Activo'),
-(7,2,6,to_timestamp('26-10-2021 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),to_timestamp('26-10-2022 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),700, 'Suspendido'),
-(8,1,1,to_timestamp('26-10-2021 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),to_timestamp('26-10-2022 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),800, 'Activo'),
-(9,3,2,to_timestamp('26-10-2021 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),to_timestamp('26-10-2022 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),900, 'Activo'),
-(10,3,3,to_timestamp('26-10-2021 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),to_timestamp('26-10-2022 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),1000, 'Suspendido');
+(7,2,7,to_timestamp('26-10-2021 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),to_timestamp('26-10-2022 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),700, 'Suspendido'),
+(8,1,8,to_timestamp('26-10-2021 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),to_timestamp('26-10-2022 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),800, 'Activo'),
+(9,3,9,to_timestamp('26-10-2021 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),to_timestamp('26-10-2022 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),900, 'Activo'),
+(10,3,10,to_timestamp('26-10-2021 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),to_timestamp('26-10-2022 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),1000, 'Suspendido');
 
 INSERT INTO SEGURO_G27625529.SINIESTRO(NRO_SINIESTRO,DESCRIPCION_SINIESTRO) VALUES
 (1,'Siniestro 1' ),

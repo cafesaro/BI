@@ -294,7 +294,7 @@
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>C:/Users/Gabriel Tagliafico/Documents/BI-main/dim_cliente.ktr</filename>
+      <filename>${RUTA}/dim_cliente.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -333,7 +333,7 @@
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>C:/Users/Gabriel Tagliafico/Documents/BI-main/dim_contrato.ktr</filename>
+      <filename>${RUTA}/dim_contrato.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -372,7 +372,7 @@
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>C:/Users/Gabriel Tagliafico/Documents/BI-main/dim_producto.ktr</filename>
+      <filename>${RUTA}/dim_producto.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -411,7 +411,7 @@
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>C:/Users/Gabriel Tagliafico/Documents/BI-main/dim_estado_contrato.ktr</filename>
+      <filename>${RUTA}/dim_estado_contrato.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -450,7 +450,7 @@
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>C:/Users/Gabriel Tagliafico/Documents/BI-main/dim_eval_servicio.ktr</filename>
+      <filename>${RUTA}/dim_eval_servicio.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -489,7 +489,7 @@
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>C:/Users/Gabriel Tagliafico/Documents/BI-main/dim_siniestro.ktr</filename>
+      <filename>${RUTA}/dim_siniestro.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -528,7 +528,7 @@
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>C:/Users/Gabriel Tagliafico/Documents/BI-main/dim_tiempo.ktr</filename>
+      <filename>${RUTA}/dim_tiempo.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -601,7 +601,7 @@
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>C:/Users/Gabriel Tagliafico/Documents/BI-main/fact_registro_siniestro.ktr</filename>
+      <filename>${RUTA}/fact_registro_siniestro.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -640,7 +640,7 @@
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>C:/Users/Gabriel Tagliafico/Documents/BI-main/fact_registro_contrato.ktr</filename>
+      <filename>${RUTA}/fact_registro_contrato.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -679,7 +679,7 @@
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>C:/Users/Gabriel Tagliafico/Documents/BI-main/fact_metas.ktr</filename>
+      <filename>${RUTA}/fact_metas.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -718,7 +718,7 @@
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>C:/Users/Gabriel Tagliafico/Documents/BI-main/fact_evaluacion_servicio.ktr</filename>
+      <filename>${RUTA}/fact_evaluacion_servicio.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
