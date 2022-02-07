@@ -66,14 +66,14 @@ INSERT INTO SEGURO_G27625529.EVALUACION_SERVICIO(COD_EVALUACION_SERVICIO,NB_EVAL
 (5,'Escelente');
 
 INSERT INTO SEGURO_G27625529.RECOMIENDA(COD_CLIENTE,COD_EVALUACION_SERVICIO,COD_PRODUCTO,RECOMIENDA_AMIGO) VALUES
-(1,1,1,FALSE),
-(2,4,1,TRUE),
-(3,2,3,FALSE),
-(5,5,4,TRUE),
-(4,4,2,FALSE),
-(6,3,3,TRUE),
-(6,2,2,FALSE),
-(1,5,4,TRUE);
+(1,1,1,to_timestamp('05-01-2022 10:26:26', 'DD-MM-YYYY hh24:mi:ss')),
+(2,4,1,to_timestamp('06-01-2022 10:26:26', 'DD-MM-YYYY hh24:mi:ss')),
+(3,2,3,to_timestamp('07-01-2022 10:26:26', 'DD-MM-YYYY hh24:mi:ss')),
+(5,5,4,to_timestamp('08-01-2022 10:26:26', 'DD-MM-YYYY hh24:mi:ss')),
+(4,4,2,to_timestamp('09-01-2022 10:26:26', 'DD-MM-YYYY hh24:mi:ss')),
+(6,3,3,to_timestamp('10-01-2022 10:26:26', 'DD-MM-YYYY hh24:mi:ss')),
+(6,2,2,to_timestamp('11-01-2022 10:26:26', 'DD-MM-YYYY hh24:mi:ss')),
+(1,5,4,to_timestamp('12-01-2022 10:26:26', 'DD-MM-YYYY hh24:mi:ss'));
 
 INSERT INTO SEGURO_G27625529.CONTRATO(NRO_CONTRATO,DESCRIPCION_CONTRATO) VALUES
 (1,'Contrato 1' ),
@@ -112,13 +112,13 @@ INSERT INTO SEGURO_G27625529.SINIESTRO(NRO_SINIESTRO,DESCRIPCION_SINIESTRO) VALU
 (10,'Siniestro 10' );
 
 INSERT INTO SEGURO_G27625529.REGISTRO_SINIESTRO(NRO_CONTRATO,NRO_SINIESTRO,FECHA_SINIESTRO,FECHA_RESPUESTA,ID_RECHAZO,MONTO_SOLICITADO,MONTO_RECONOCIDO) VALUES
-(1,1,to_timestamp('05-01-2021 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),to_timestamp('26-10-2022 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),'SI',100, 100),
-(2,2,to_timestamp('26-10-2021 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),to_timestamp('26-10-2022 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),'NO',200, 300),
-(3,3,to_timestamp('26-10-2021 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),to_timestamp('26-10-2022 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),'SI',300, 200),
-(4,4,to_timestamp('26-10-2021 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),to_timestamp('26-10-2022 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),'NO',400, 400),
-(5,5,to_timestamp('26-10-2021 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),to_timestamp('26-10-2022 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),'SI',500, 100),
-(6,6,to_timestamp('26-10-2021 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),to_timestamp('26-10-2022 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),'NO',600, 600),
-(7,7,to_timestamp('26-10-2021 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),to_timestamp('26-10-2022 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),'SI',700, 300),
-(8,8,to_timestamp('26-10-2021 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),to_timestamp('26-10-2022 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),'NO',800, 200),
-(9,9,to_timestamp('26-10-2021 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),to_timestamp('26-10-2022 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),'SI',900, 100),
-(10,10,to_timestamp('26-10-2021 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),to_timestamp('26-10-2022 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),'NO',1000, 1000);
+(1,1,to_timestamp('05-01-2021 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),to_timestamp('26-10-2021 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),'SI',100, 100),
+(2,2,to_timestamp('26-10-2021 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),to_timestamp('26-10-2021 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),'NO',200, 300),
+(3,3,to_timestamp('26-10-2021 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),to_timestamp('26-10-2021 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),'SI',300, 200),
+(4,4,to_timestamp('26-10-2021 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),to_timestamp('26-10-2021 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),'NO',400, 400),
+(5,5,to_timestamp('26-10-2021 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),to_timestamp('26-10-2021 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),'SI',500, 100),
+(6,6,to_timestamp('26-10-2021 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),to_timestamp('26-10-2021 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),'NO',600, 600),
+(7,7,to_timestamp('26-10-2021 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),to_timestamp('26-10-2021 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),'SI',700, 300),
+(8,8,to_timestamp('26-10-2021 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),to_timestamp('26-10-2021 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),'NO',800, 200),
+(9,9,to_timestamp('26-10-2021 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),to_timestamp('26-10-2021 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),'SI',900, 100),
+(10,10,to_timestamp('26-10-2021 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),to_timestamp('26-10-2021 10:26:26', 'DD-MM-YYYY hh24:mi:ss'),'NO',1000, 1000);
